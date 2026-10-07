@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter_application_bn5_swd8_s1/core/helpers/shared_helper.dart';
 import 'package:flutter_application_bn5_swd8_s1/core/style/app_theme.dart';
+import 'package:flutter_application_bn5_swd8_s1/models/product_model.dart';
 import 'package:flutter_application_bn5_swd8_s1/models/user_model.dart';
-import 'package:flutter_application_bn5_swd8_s1/screens/hive_screen.dart';
 import 'package:flutter_application_bn5_swd8_s1/screens/users_screen.dart';
 // import 'package:flutter_application_bn5_swd8_s1/screens/shared_pref_screen.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -13,6 +13,7 @@ void main() async {
   await Hive.initFlutter();
 
   Hive.registerAdapter(UserModelAdapter());
+  Hive.registerAdapter(ProductModelAdapter());
 
   await Hive.openBox<UserModel>("usersBox");
 
