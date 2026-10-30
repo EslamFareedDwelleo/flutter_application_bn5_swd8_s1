@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_bn5_swd8_s1/animation_sessions/animation_screen.dart';
 // import 'package:flutter_application_bn5_swd8_s1/core/helpers/shared_helper.dart';
 import 'package:flutter_application_bn5_swd8_s1/core/style/app_theme.dart';
 import 'package:flutter_application_bn5_swd8_s1/models/product_model.dart';
@@ -50,44 +51,46 @@ json
 */
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  // WidgetsFlutterBinding.ensureInitialized();
 
-  await Hive.initFlutter();
+  // await Hive.initFlutter();
 
-  Hive.registerAdapter(UserModelAdapter());
-  Hive.registerAdapter(ProductModelAdapter());
+  // Hive.registerAdapter(UserModelAdapter());
+  // Hive.registerAdapter(ProductModelAdapter());
 
-  await Hive.openBox<UserModel>("usersBox");
+  // await Hive.openBox<UserModel>("usersBox");
 
   // await Hive.openBox("userBox");
   // await Hive.openBox("favouritesBox");
 
   // await SharedHelper.init();
 
-  runApp(MyApp());
+  runApp(
+    MaterialApp(debugShowCheckedModeBanner: false, home: AnimationScreen()),
+  );
 }
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "XO",
-      debugShowCheckedModeBanner: false,
-      theme: AppTheme.light,
-      darkTheme: AppTheme.dark,
-      home: ApiScreen(),
-      // routes: {
-      //   "splash": (_) => SplashScreen(),
-      //   "login": (_) => LoginScreen(),
-      //   "main": (_) => MainScreen(),
-      //   "home": (_) => HomeScreen(),
-      //   "profile": (_) => ProfileScreen(),
-      // },
-      // initialRoute: "splash",
-      // home: SharedPrefScreen(),
-    );
-  }
-}
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: "XO",
+//       debugShowCheckedModeBanner: false,
+//       theme: AppTheme.light,
+//       darkTheme: AppTheme.dark,
+//       home: ApiScreen(),
+//       // routes: {
+//       //   "splash": (_) => SplashScreen(),
+//       //   "login": (_) => LoginScreen(),
+//       //   "main": (_) => MainScreen(),
+//       //   "home": (_) => HomeScreen(),
+//       //   "profile": (_) => ProfileScreen(),
+//       // },
+//       // initialRoute: "splash",
+//       // home: SharedPrefScreen(),
+//     );
+//   }
+// }
 
 //? Done
 //? Widget
